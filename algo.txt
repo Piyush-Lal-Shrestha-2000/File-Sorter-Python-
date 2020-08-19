@@ -1,0 +1,73 @@
+1. Start.
+2. Receive the path of the directory from the user.
+3. From the directory, scan all the files, and extract their extension names, and place the extension name in an array as:
+	if(array_doesnot_contain_the_extension){
+		push_the_extension_to_array()
+		create_the_extension_folder()
+	}else{
+		continue
+	}
+4. Rescan the directory, and push the files into their respective folders.
+5. End.
+
+
+
+
+
+
+
+
+
+
+
+1. Start.
+2. Receive the path of the directory from the user.
+3. Scan the directory for the file extensions, and work as:
+	if(array_doesnot_contain_the_extension){
+		push_the_extension_to_array()
+		create_the_extension_folder()
+		push_the_file_to_the_folder()
+	}else{
+		//The array contains the extension name, meaning that the folder of the extension also exists.
+		push_the_file_to_the_folder()
+	}
+4. End.
+
+
+
+
+
+
+
+	FILE_SORTER
+
+
+1. Start.
+2. Receive the path of the directory from the user, and store it in the variable main_path.
+3. Create an array or similar type of data storing entity to store the names of the extensions. (Naming the entity as extension_array)
+4. Scan the directory contents:
+	if(content==file){
+		
+		//Block executes if the content is a file, and not a folder.
+		
+		folder_name = content.extension_name
+		//Creating a variable folder_name, which contains the name of the extension.
+		
+		sub_folder_path = main_path + "\" + folder_name
+		//Creating a variable sub_folder_path, which contains the path to the extension name's folder.		
+
+		if(!extension_array.contains(content.extension_name)){
+
+			//Block executes if the content's extension name is not in the array.			
+
+			create_folder(folder_name, main_path)
+			//Creating the folder in the user provided path.	
+	
+		}
+
+		push_file_to_the_folder(content, sub_folder_path)
+		//Pushing the file to the folder.
+		
+	}
+
+5. End.
